@@ -21,7 +21,7 @@
     "dotenv": "^8.2.0",
     "ejs": "~2.6.1",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.7-alpha.3",
+    "express-fileupload": "^1.1.10",
     "express-session": "^1.16.2",
     "form-data": "^3.0.0",
     "google-auth-library": "^6.0.0",
