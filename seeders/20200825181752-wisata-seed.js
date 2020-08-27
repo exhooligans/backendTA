@@ -35,7 +35,7 @@ module.exports = {
       FotoWisata: 'https://1.bp.blogspot.com/-0BTIKK70jvQ/X0VUF7lrIQI/AAAAAAAAAq4/Lb4FteaFtDUz0gwq_cMPu9JCVgKLQpWowCLcBGAsYHQ/s905/beachwalk.jpg',
       AlamatWisata: 'Jl. Pantai Kuta, Kuta, Kabupaten Badung, Bali 80361',
       Photo360: '-NkmBdHs_qY0/X0X4qMb7DKI/AAAAAAAAAsM/jttT8d14xKMT1RmzZI0_h3z_NAjLxmdvgCLcBGAsYHQ/s2508/R8C1H1.jpg'
-    },
+    }
     ])
   },
 

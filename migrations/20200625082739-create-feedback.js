@@ -29,12 +29,11 @@ module.exports = {
       },
 
       feedback: {
-        type: Sequelize.STRING(12)
+        type: Sequelize.STRING(255)
       },
       tgl_isi: {
         type: Sequelize.DATE
       }
-      
 
     });
   },

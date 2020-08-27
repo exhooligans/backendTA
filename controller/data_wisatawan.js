@@ -1,4 +1,4 @@
-const { Wisatawan, Wisata } = require('../models')
+const { Wisatawan, Wisata, Feedback } = require('../models')
 const Op = require("sequelize").Op
 
 
@@ -212,6 +212,29 @@ exports.Melihatsemuawisata = async (req, res) => {
     return res.json({
       message: "Melihat Seluruh data Wisata",
       wisata
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+exports.MenambahFeedback = async (req, res) => {
+  let {
+    id_wisata,
+    id_wisatawan,
+    feedback,
+    tgl_isi
+  } = req.body
+  try {
+    const feedback1 = await Feedback.create({
+      id_wisata,
+      id_wisatawan,
+      feedback,
+      tgl_isi
+    })
+    return res.json({
+      message: "Success Menambahkan Feedback",
+      feedback1
     })
   } catch (err) {
     console.log(err)
