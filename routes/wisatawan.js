@@ -12,7 +12,7 @@ router.post("/wisatawan/login", LoginWisatawan)
 router.get("/wisatawan/:id", lihatdataWisatawan)
 router.get("/seeallwisata/:key", Melihatwisata)
 router.get("/seeallwisata/", Melihatsemuawisata)
-router.get("/wisatawan/feedback", MenambahFeedback)
+router.post("/wisatawan/feedback", MenambahFeedback)
 
 
 

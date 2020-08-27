@@ -222,9 +222,9 @@ exports.MenambahFeedback = async (req, res) => {
   let {
     id_wisata,
     id_wisatawan,
-    feedback,
-    tgl_isi
+    feedback
   } = req.body
+  const tgl_isi = Date.now();
   try {
     const feedback1 = await Feedback.create({
       id_wisata,
