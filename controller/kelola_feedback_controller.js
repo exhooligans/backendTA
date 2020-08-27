@@ -1,4 +1,7 @@
 const { Feedback } = require("../models");
+// const { Wisatawan } = require("../models");
+// const { Wisata } = require("../models");
+
 // const feedback = require("../models/feedback");
 const Op = require("sequelize").Op
 
