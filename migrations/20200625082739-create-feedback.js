@@ -17,7 +17,7 @@ module.exports = {
           key: "id_wisata"
         }
       },
-     
+
       id_wisatawan: {
         type: Sequelize.INTEGER,
         onDelete: "CASCADE",
@@ -27,10 +27,15 @@ module.exports = {
           key: "id_wisatawan"
         }
       },
+
+      feedback: {
+        type: Sequelize.STRING(12)
+      },
       tgl_isi: {
         type: Sequelize.DATE
-      }, 
+      }
       
+
     });
   },
   down: async (queryInterface, Sequelize) => {

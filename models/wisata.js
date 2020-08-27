@@ -3,23 +3,28 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class wisata extends Model {
-    
+  class Wisata extends Model {
+
     static associate(models) {
-      wisata.belongsTo(sequelize.models.Pengelola_wisata, {
+      Wisata.belongsTo(sequelize.models.Pengelola_wisata, {
         foreignKey: "id_pengelola"
       });
     }
   };
-  wisata.init({
-    id_wisata: DataTypes.INTEGER,
+  Wisata.init({
+    id_wisata: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     id_pengelola: DataTypes.INTEGER,
     NamaWisata: DataTypes.STRING,
     FotoWisata: DataTypes.STRING,
-    AlamatWisata: DataTypes.STRING
+    AlamatWisata: DataTypes.STRING,
+    Photo360: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'wisata',
+    modelName: 'Wisata',
+    timestamps: false
   });
-  return wisata;
+  return Wisata;
 };

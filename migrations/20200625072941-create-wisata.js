@@ -26,7 +26,11 @@ module.exports = {
       AlamatWisata: {
         type: Sequelize.STRING(100)
       },
-     
+      Photo360: {
+        type: Sequelize.STRING(255)
+      },
+
+
     });
   },
   down: async (queryInterface, Sequelize) => {

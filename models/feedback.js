@@ -3,27 +3,32 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class feedback extends Model {
+  class Feedback extends Model {
 
     static associate(models) {
-      feedback.belongsTo(sequelize.models.wisata, {
+      Feedback.belongsTo(sequelize.models.Wisata, {
         foreignKey: "id_wisata"
       });
     }
     static associate(models) {
-      feedback.belongsTo(sequelize.models.wisatawan, {
+      Feedback.belongsTo(sequelize.models.Wisatawan, {
         foreignKey: "id_wisatawan"
       });
     }
   };
-  feedback.init({
-    id_feedback: DataTypes.INTEGER,
+  Feedback.init({
+    id_feedback: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     id_wisata: DataTypes.INTEGER,
     id_wisatawan: DataTypes.INTEGER,
+    feedback: DataTypes.STRING(12),
     tgl_isi: DataTypes.DATE
   }, {
     sequelize,
-    modelName: 'feedback',
+    modelName: 'Feedback',
+    timestamps: false
   });
-  return feedback;
+  return Feedback;
 };
