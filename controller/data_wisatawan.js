@@ -224,6 +224,29 @@ exports.MenambahFeedback = async (req, res) => {
     id_wisatawan,
     feedback
   } = req.body
+  const tgl_isi = Date.now(); 
+  try {
+    const feedback1 = await Feedback.create({
+      id_wisata,
+      id_wisatawan,
+      feedback,
+      tgl_isi
+    })
+    return res.json({
+      message: "Success Menambahkan Feedback",
+      feedback1
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+exports.UpdateProfile = async (req, res) => {
+  let {
+    id_wisata,
+    id_wisatawan,
+    feedback
+  } = req.body
   const tgl_isi = Date.now();
   try {
     const feedback1 = await Feedback.create({
