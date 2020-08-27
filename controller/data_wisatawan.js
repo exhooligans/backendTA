@@ -1,4 +1,5 @@
 const { Wisatawan, Wisata, Feedback } = require('../models')
+const wisata = require('../models/wisata')
 const Op = require("sequelize").Op
 
 
@@ -235,6 +236,34 @@ exports.MenambahFeedback = async (req, res) => {
     return res.json({
       message: "Success Menambahkan Feedback",
       feedback1
+    })
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+exports.UpdateProfile = async (req, res) => {
+  const { id_wisatawan } = req.params
+  let {
+    nama,
+    password,
+    email,
+    notelp
+  } = req.body
+  try {
+    const wisatawan = await Wisatawan.findOne({
+      where: { id_wisatawan: { [Op.eq]: id_wisatawan } }
+    })
+    if (wisatawan) {
+      wisatawan.nama = nama
+      wisatawan.email = email
+      wisatawan.notelp = notelp
+      wisatawan.password = password
+      await wisatawan.save()
+    }
+    return res.status(200).json({
+      message: "Success update profile",
+      wisatawan
     })
   } catch (err) {
     console.log(err)
