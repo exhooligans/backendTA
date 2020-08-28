@@ -8,8 +8,8 @@ let {
 
 const auth = require('../auth/pengelola_auth')
 
-router.get("/pengelola/kelola_feedback", viewKelola_feedback)
-router.get("/pengelola/kelola_feedback/delete/:id", Kelola_feedbackDelete)
+router.get("/pengelola/kelolafeedback", viewKelola_feedback)
+router.get("/pengelola/kelolafeedback/delete/:id_feedback", Kelola_feedbackDelete)
 
 
 

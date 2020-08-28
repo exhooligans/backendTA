@@ -39,13 +39,13 @@
                                 Tambah
                             </button>
                         </div>
-                        <table id="pengelola_wisata"  class="table table-bordered table-striped">
+                        <table id="pengelola_wisata" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Pengelola</th>
                                     <th>Email</th>
-                                    
+
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -58,7 +58,7 @@
                                     <td style="width: 150px;">
                                         <a href="javascript:void(0);" type="button" class="btn btn-warning btn-sm edit"
                                             data-id_pengelola="<%= pengelola_wisata[i].id_pengelola %>"
-                                            data-NamaPengelola="<%= pengelola_wisata[i].NamaPengelola %>"
+                                            data-namapengelola="<%= pengelola_wisata[i].NamaPengelola %>"
                                             data-email="<%= pengelola_wisata[i].email %>"
                                             data-password="<%= pengelola_wisata[i].password %>">
                                             <span class="glyphicon glyphicon-pencil"></span>
@@ -93,53 +93,53 @@
 
 <!-- page script -->
 <script>
-  //myscript
-      
+    //myscript
+
     $(document).ready(function () {
         // datatable
         // $('#pengelola_wisata').DataTable({ dom: 'Bfrtip', buttons: [ 'copy', 'csv', 'excel', 'pdf', 'print' ] });
         // $(document).ready(function () { setTimeout(function () { $(".alert").fadeIn('slow'); }, 1500); });
-        $('#pengelola_wisata').DataTable( {
-        dom: 'Blfrtip',
-        buttons: [
-       {
-           extend: 'pdf',
-           footer: true,
-           exportOptions: {
-                columns: [1,2]
-            }
-       },
-       {
-           extend: 'print',
-           footer: true,
-           exportOptions: {
-                columns: [1,2]
-            }
-       },
-       {
-           extend: 'copy',
-           footer: true,
-           exportOptions: {
-                columns: [1,2]
-            }
-       },
-       {
-           extend: 'csv',
-           footer: true,
-           exportOptions: {
-                columns: [1,2]
-            }
-          
-       },
-       {
-           extend: 'excel',
-           footer: true,
-           exportOptions: {
-                columns: [1,2]
-            }
-       }         
-    ]  
-    } );
+        $('#pengelola_wisata').DataTable({
+            dom: 'Blfrtip',
+            buttons: [
+                {
+                    extend: 'pdf',
+                    footer: true,
+                    exportOptions: {
+                        columns: [1, 2]
+                    }
+                },
+                {
+                    extend: 'print',
+                    footer: true,
+                    exportOptions: {
+                        columns: [1, 2]
+                    }
+                },
+                {
+                    extend: 'copy',
+                    footer: true,
+                    exportOptions: {
+                        columns: [1, 2]
+                    }
+                },
+                {
+                    extend: 'csv',
+                    footer: true,
+                    exportOptions: {
+                        columns: [1, 2]
+                    }
+
+                },
+                {
+                    extend: 'excel',
+                    footer: true,
+                    exportOptions: {
+                        columns: [1, 2]
+                    }
+                }
+            ]
+        });
 
         // angka 3000 dibawah ini artinya pesan akan hilang dalam 3 detik setelah muncul
         setTimeout(function () { $(".alert").fadeOut('slow'); }, 4000);
@@ -153,15 +153,17 @@
     //showing data to e edit modal 
     $('#pengelola_wisata').on('click', '.edit', function () {
         var id_pengelola = $(this).data('id_pengelola');
-        var NamaPengelola = $(this).data('NamaPengelola');
+        var namapengelola = $(this).data('namapengelola');
         var email = $(this).data('email');
         var password = $(this).data('password');
 
         $('#edit-pengelola').modal('show');
         $('.id_pengelola').val(id_pengelola);
-        $('.NamaPengelola').val(NamaPengelola);
+        $('.namapengelola').val(namapengelola);
+        console.log("ini" + NamaPengelola)
         $('.email').val(email);
-        $('.passowrd').val(password);
+        $('.password').val(password);
+        console.log("ini" + password)
     });
 
     function delete_pengelola_wisata(id_pengelola) {

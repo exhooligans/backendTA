@@ -2,96 +2,110 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/png" href="images/adminprofile/adminT.png" />
-    <title></title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" type="image/png" href="images/adminprofile/adminT.png" />
+  <title></title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="/adminlte/bower_components/Ionicons/css/ionicons.min.css">
-    <!-- DataTables -->
-    <!-- <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"> -->
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <!-- <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"> -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="/adminlte/dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
+  <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="/adminlte/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="/adminlte/dist/css/skins/_all-skins.min.css">
-    <!-- Google Font -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="/adminlte/dist/css/skins/_all-skins.min.css">
+  <!-- Google Font -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <style>
-        .example-modal .modal {
-            position: relative;
-            top: auto;
-            bottom: auto;
-            right: auto;
-            left: auto;
-            display: block;
-            z-index: 1;
-        }
+  <style>
+    .example-modal .modal {
+      position: relative;
+      top: auto;
+      bottom: auto;
+      right: auto;
+      left: auto;
+      display: block;
+      z-index: 1;
+    }
 
-        .example-modal .modal {
-            background: transparent !important;
-        }
-    </style>
+    .example-modal .modal {
+      background: transparent !important;
+    }
+  </style>
 </head>
 
 <body class="hold-transition skin-purple-light sidebar-mini">
-    <div class="wrapper">
+  <div class="wrapper">
 
-        <header class="main-header fixed">
-            <!-- Logo -->
-            <a href="index2.html" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>B</b>VT</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Badung Virtual Tour</b></span>
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                </a>
+    <header class="main-header fixed">
+      <!-- Logo -->
+      <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>B</b>VT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Badung Virtual Tour</b></span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
 
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="../images/adminprofile/adminT.png" height="18" width="18" class="img-circle" alt="User Image">
 
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
+                <span class="hidden-xs"><% if (admin.nama_admin != null) { %>
+                  <%= admin.nama_admin+ " (Admin)" %>
+                  <% }else{ %>
+                  <%= "Admin" %>
+                  <% } %></span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="../images/adminprofile/adminT.png" height="18" width="18" class="img-circle"
+                    alt="User Image">
 
-                                    </p>
-                                </li>
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="/logoutadmin" class="btn btn-default btn-flat">Sign Out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
 
-                    </ul>
-                </div>
-            </nav>
-        </header>
+                  <p> <% if (admin.nama_admin!= null) { %>
+                    <%= admin.nama_admin+ " (Admin)" %>
+                    <% }else{ %>
+                    <%= "Admin" %>
+                    <% } %>
+                  </p>
+                </li>
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="/admin/profile" class="btn btn-default btn-flat">Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="/logoutadmin" class="btn btn-default btn-flat">Sign Out</a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </header>

@@ -59,7 +59,9 @@
                   <td><%= wisatawan[i].password %></td>
                   <td style="width: 150px;">
                     <a href="javascript:void(0);" type="button" class="btn btn-warning btn-sm edit"
-                      data-id_wisatawan="<%= wisatawan[i].id_wisatawan %>" data-nama="<%= wisatawan[i].nama %>">
+                      data-id_wisatawan="<%= wisatawan[i].id_wisatawan %>" data-nama="<%= wisatawan[i].nama %>"
+                      data-notelp="<%= wisatawan[i].notelp %>" data-email="<%= wisatawan[i].email %>"
+                      data-password="<%= wisatawan[i].password %>">
                       <span class="glyphicon glyphicon-pencil"></span>
                       Edit
                     </a>
@@ -104,15 +106,20 @@
     }
   })
 
-  //showing data to e edit modal 
   $('#wisatawan').on('click', '.edit', function () {
     var id_wisatawan = $(this).data('id_wisatawan');
     var nama = $(this).data('nama');
-
+    var notelp = $(this).data('notelp');
+    var email = $(this).data('email');
+    var password = $(this).data('password');
     $('#edit-modal').modal('show');
-    $('.id_wisatawan').val(id_wisatawan);
+    $('.id_wistawan').val(id_wisatawan);
     $('.nama').val(nama);
+    $('.notelp').val(notelp);
+    $('.email').val(email);
+    $('.password').val(password);
   });
+
 
   function delete_wisatawan(id_wisatawan) {
     let IDWisatawan = id_wisatawan;
