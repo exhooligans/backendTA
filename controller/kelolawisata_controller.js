@@ -57,7 +57,7 @@ exports.Kelola_wisataCreate = async (req, res) => {
 exports.Kelola_wisataUpdate = async (req, res) => {
   const { id_wisata, NamaWisata,
     FotoWisata, AlamatWisata
-    } = req.body
+  } = req.body
   try {
     const wisata = await Wisata.findOne({
       where: {

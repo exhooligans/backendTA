@@ -41,12 +41,12 @@ exports.Kelola_feedbackDelete = (req, res) => {
     return feedback.destroy().then(() => {
       req.flash('alertMessage', `Berhasi hapus data : ${feedback.feedback}`)
       req.flash('alertStatus', 'danger')
-      res.redirect("/pengelola_wisata/kelola_feedback")
+      res.redirect("/pengelola/kelolafeedback")
     });
   })
     .catch(err => {
       req.flash('alertMessage', err.message)
       req.flash('alertStatus', 'danger')
-      res.redirect("/pengelola/kelola_feedback/delete")
+      res.redirect("/pengelola/kelolafeedback/delete")
     });
 }

@@ -12,7 +12,11 @@
                 <img src="\images\adminprofile\adminT.png" height="18" width="18" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-
+                <p><% if (admin.nama_admin != null) { %>
+                    <%= admin.nama_admin+ " (Admin)" %>
+                    <% }else{ %>
+                    <%= "Admin" %>
+                    <% } %></p>
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -30,30 +34,30 @@
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
-                    <ul class="treeview-menu">
-                        <li class="<% if ( stuff.url == "/admin/wisatawan" ) { %> active <% } %>">
-                            <a href="/admin/wisatawan"><i class="fa fa-user"></i> <span>Kelola Data Wisatawan</span></a>
-                        </li>
+                <ul class="treeview-menu">
+                    <li class="<% if ( stuff.url == "/admin/wisatawan" ) { %> active <% } %>">
+                        <a href="/admin/wisatawan"><i class="fa fa-user"></i> <span>Kelola Data Wisatawan</span></a>
+                    </li>
                 </ul>
-                
-                <li class="treeview active">
-                    <a href="#">
-                        <i class="fa fa-list"></i>
-                        <span>Data Pengelola Wisata</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li class="<% if ( stuff.url == "/admin/pengelola_wisata" ) { %> active <% } %>">
-                            <a href="/admin/pengelola_wisata"><i class="fa fa-user"></i> <span>Kelola Pengelola
-                                    Wisata</span></a>
-                        </li>
-                    </ul>
-                </li>
+
+            <li class="treeview active">
+                <a href="#">
+                    <i class="fa fa-list"></i>
+                    <span>Data Pengelola Wisata</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="<% if ( stuff.url == "/admin/pengelola_wisata" ) { %> active <% } %>">
+                        <a href="/admin/pengelola_wisata"><i class="fa fa-user"></i> <span>Kelola Pengelola
+                                Wisata</span></a>
+                    </li>
                 </ul>
-           
-       
+            </li>
+        </ul>
+
+
         <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
