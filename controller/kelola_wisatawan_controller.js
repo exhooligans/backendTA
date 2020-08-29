@@ -1,6 +1,6 @@
 const { Wisatawan } = require("../models")
 const Op = require("sequelize").Op
-
+require('dotenv/config')
 exports.viewWisatawan = async (req, res) => {
   try {
     const alertMessage = req.flash('alertMessage');
