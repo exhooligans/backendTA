@@ -1,4 +1,4 @@
-const { Feedback } = require("../models");
+const { Feedback, Wisatawan, Wisata } = require("../models");
 // const { Wisatawan } = require("../models");
 // const { Wisata } = require("../models");
 
@@ -11,13 +11,19 @@ exports.viewKelola_feedback = async (req, res) => {
     const alertStatus = req.flash('alertStatus');
     const alert = { message: alertMessage, status: alertStatus }
     const userLogin = req.session.pengelola_wisata
+    const wisatawan = await Wisatawan.findAll()
     if (userLogin) {
-      const feedback = await Feedback.findAll()
+      const feedback = await Feedback.findAll({
+        include: [{
+          model: Wisatawan
+        }]
+      })
       res.render("pengelola_wisata/kelolafeedback/view_feedback", {
 
         title: "Data Feedback",
         pengelola_wisata: userLogin,
         feedback: feedback,
+        wisatawan: wisatawan,
         alert: alert
 
       })

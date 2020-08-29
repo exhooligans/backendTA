@@ -42,6 +42,7 @@
               <thead>
                 <tr>
                   <th>No</th>
+                  <th>Nama Wisatawan</th>
                   <th>Feedback</th>
                   <th>Tanggal</th>
 
@@ -51,6 +52,7 @@
                 <% for (let i = 0; i < feedback.length; i++ ) { %>
                 <tr>
                   <td><%= i + 1 %></td>
+                  <td><%= feedback[i].Wisatawan.nama %></td>
                   <td><%= feedback[i].feedback %></td>
                   <td><%= feedback[i].tgl_isi %></td>
 
@@ -124,6 +126,11 @@
 
     // angka 3000 dibawah ini artinya pesan akan hilang dalam 3 detik setelah muncul
     setTimeout(function () { $(".alert").fadeOut('slow'); }, 4000);
+
+    // redirect halaman catalogs
+    function successTambah() {
+      window.location.replace(window.location.protocol + "//" + window.location.host + '/admin/pengelola_wisata')
+    }
   })
 
   //showing data to e edit modal 
