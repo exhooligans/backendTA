@@ -26,6 +26,36 @@ exports.viewPengelola_wisata = async (req, res) => {
   }
 }
 
+exports.viewPengelola_wisata1 = async (req, res) => {
+  try {
+    const alertMessage = req.flash('alertMessage');
+    const alertStatus = req.flash('alertStatus');
+    const alert = { message: alertMessage, status: alertStatus }
+    const userLogin = req.session.admin
+    const { id_pengelola } = req.params
+    if (userLogin) {
+      const pengelola_wisata = await Pengelola_wisata.findOne({
+        where: {
+          id_pengelola: { [Op.eq]: id_pengelola }
+        }
+      })
+      res.render("admin/kelolapengelola/edit_pengelola", {
+
+        title: "Data Pengelola_wisata",
+        admin: userLogin,
+        pengelola_wisata: pengelola_wisata,
+        alert: alert
+
+      })
+    } else {
+      req.session.destroy()
+      res.redirect('/signinadmin')
+    }
+  } catch (err) {
+    throw err
+  }
+}
+
 exports.Pengelola_wisataCreate = async (req, res) => {
   const {
     NamaPengelola,

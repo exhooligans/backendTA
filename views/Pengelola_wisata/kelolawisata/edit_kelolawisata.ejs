@@ -1,37 +1,75 @@
 <!-- Modal Update Product-->
-<form action="/pengelola/kelola_wisata/edit" method="post">
-    <div class="modal fade" id="edit-kelolawisata" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog " role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <heading class="modal-title" id="exampleModalLabel">Edit Wisata</heading>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" class="id_wisata" required name="id_wisata">
-                    <div class="form-group">
-                        <label>Nama Wisata :</label>
-                        <input type="text" id="NamaWisata" name="NamaWisata" class="form-control NamaWisata"
-                            placeholder="Masukan Nama Wisata" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Foto Wisata :</label>
-                        <input type="text" id="FotoWisata" name="FotoWisata" class="form-control FotoWisata"
-                            placeholder="Masukan Foto" required>
-                    </div>
-                    <div class="form-group">
-                        <label>AlamatWisata :</label>
-                        <input type="text" id="AlamatWisata" name="AlamatWisata" class="form-control AlamatWisata"
-                            placeholder="Masukan Alamat" required>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
-                    </div>
-                </div>
-            </div>
+
+<%- include ../partials_pengelola/header.ejs %>
+<%- include ../partials_pengelola/sidebar.ejs %>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Edit Data Wisata
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+      <li class="active">Edit Data Wisata</li>
+    </ol>
+    <% if(alert.message != '') { %>
+    <br>
+    <div class="alert alert-<%= alert.status %>" style="text-align: center;">
+      <strong><%= alert.message %></strong>
+    </div>
+    <% } %>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <!-- /.box-header -->
+          <div class="box-header">
+            <th style="width: 50%;">Edit Data Wisata</th>
+            <th class="box-title" style="margin-left: 80%;">
+              <!-- <button class="btn btn-success">Tambah</button> -->
+            </th>
+          </div>
+
+          <div class="box-body" style="height: 370px; overflow-y: scroll; overflow-x: scroll;">
+            <form action="/pengelola/kelola_wisata/edit/<%= wisata.id_wisata %>" method="post"
+              enctype="multipart/form-data">
+              <input type="hidden" class="id_wisata" required name="id_wisata" value="<%= wisata.id_wisata %>">
+              <div class="form-group">
+                <label>Nama Wisata :</label>
+                <input type="text" id="NamaWisata" name="NamaWisata" class="form-control NamaWisata"
+                  placeholder="Masukan Nama Wisata" value="<%= wisata.NamaWisata %>" required>
+              </div>
+              <div class="form-group">
+
+                <label>Foto Wisata :</label>
+                <a href="https://1.bp.blogspot.com/">
+                  <img src="<%= wisata.FotoWisata %>" height="70" width="70" alt="foto" />
+                </a>
+                <input type="text" id="FotoWisata" name="FotoWisata" class="form-control FotoWisata"
+                  placeholder="Masukan Email" value="<%= wisata.FotoWisata%>" required>
+              </div>
+              <div class="form-group">
+                <label>AlamatWisata :</label>
+                <input type="text" id="AlamatWisata" name="AlamatWisata" class="form-control AlamatWisata"
+                  placeholder="Masukan No Telp" value="<%= wisata.AlamatWisata %>" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Simpan</button>
+          </div>
+          </form>
+          <!-- /.box-body -->
         </div>
-</form>
+        <!-- /.box -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+  <!-- /.content -->
+</div>
+<%- include ../partials_pengelola/footer.ejs %>

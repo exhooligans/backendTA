@@ -56,11 +56,8 @@
                                     <td><%= pengelola_wisata[i].NamaPengelola %></td>
                                     <td><%= pengelola_wisata[i].email %></td>
                                     <td style="width: 150px;">
-                                        <a href="javascript:void(0);" type="button" class="btn btn-warning btn-sm edit"
-                                            data-id_pengelola="<%= pengelola_wisata[i].id_pengelola %>"
-                                            data-namapengelola="<%= pengelola_wisata[i].NamaPengelola %>"
-                                            data-email="<%= pengelola_wisata[i].email %>"
-                                            data-password="<%= pengelola_wisata[i].password %>">
+                                        <a href="/admin/pengelola_wisata/edit_pengelola/<%= pengelola_wisata[i].id_pengelola %>"
+                                            class="btn btn-default btn-flat">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                             Edit
                                         </a>

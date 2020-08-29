@@ -25,6 +25,35 @@ exports.viewWisatawan = async (req, res) => {
     throw err
   }
 }
+exports.viewWisatawan1 = async (req, res) => {
+  try {
+    const alertMessage = req.flash('alertMessage');
+    const alertStatus = req.flash('alertStatus');
+    const alert = { message: alertMessage, status: alertStatus }
+    const userLogin = req.session.admin
+    const { id_wisatawan } = req.params
+    if (userLogin) {
+      const wisatawan = await Wisatawan.findOne({
+        where: {
+          id_wisatawan: { [Op.eq]: id_wisatawan }
+        }
+      })
+      res.render("admin/kelolawisatawan/edit_modal", {
+
+        title: "Data Wisatawan",
+        admin: userLogin,
+        wisatawan: wisatawan,
+        alert: alert
+
+      })
+    } else {
+      req.session.destroy()
+      res.redirect('/signinadmin')
+    }
+  } catch (err) {
+    throw err
+  }
+}
 
 exports.WisatawanCreate = async (req, res) => {
   const {

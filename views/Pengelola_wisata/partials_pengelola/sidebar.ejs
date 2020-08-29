@@ -9,10 +9,14 @@
         <div class="user-panel">
             <div class="pull-left image">
 
-                <img src="\images\adminprofile\adminT.png" height="18" width="18" class="img-circle" alt="User Image">
+                <img src="/images/pengelola/pengelola.png" height="18" width="18" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-
+                <p><% if (pengelola_wisata.NamaPengelola) { %>
+                    <%= pengelola_wisata.NamaPengelola + " (Pengelola Wisata)"%>
+                    <% }else{ %>
+                    <%= "Pengelola Wisata" %>
+                    <% } %></p>
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>

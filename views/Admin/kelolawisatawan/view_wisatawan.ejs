@@ -58,10 +58,8 @@
                   <td><%= wisatawan[i].email %></td>
                   <td><%= wisatawan[i].password %></td>
                   <td style="width: 150px;">
-                    <a href="javascript:void(0);" type="button" class="btn btn-warning btn-sm edit"
-                      data-id_wisatawan="<%= wisatawan[i].id_wisatawan %>" data-nama="<%= wisatawan[i].nama %>"
-                      data-notelp="<%= wisatawan[i].notelp %>" data-email="<%= wisatawan[i].email %>"
-                      data-password="<%= wisatawan[i].password %>">
+                    <a href="/admin/wisatawan/edit_modal/<%= wisatawan[i].id_wisatawan %>"
+                      class="btn btn-default btn-flat">
                       <span class="glyphicon glyphicon-pencil"></span>
                       Edit
                     </a>
