@@ -54,14 +54,15 @@
                                 <tr>
                                     <td><%= i + 1 %></td>
                                     <td><%= wisata[i].NamaWisata %></td>
-                                    <td><%= wisata[i].FotoWisata %></td>
+
+                                    <td> <a href="https://1.bp.blogspot.com/">
+                                            <img src="<%= wisata[i].FotoWisata %>" height="70" width="70" alt="foto" />
+                                        </a>
+                                    </td>
                                     <td><%= wisata[i].AlamatWisata %></td>
                                     <td style="width: 150px;">
-                                        <a href="javascript:void(0);" type="button" class="btn btn-warning btn-sm edit"
-                                            data-id_wisata="<%= wisata[i].id_wisata %>"
-                                            data-id_pengelola=""="<%= wisata[i].id_pengelola %>"
-                                            data-FotoWisata="<%= wisata[i].FotoWisata %>"
-                                            data-AlamatWisata="<%= wisata[i].AlamatWisata %>">
+                                        <a href="/pengelola/kelola_wisata/edit_kelolawisata/<%= wisata[i].id_wisata %>"
+                                            class="btn btn-default btn-flat">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                             Edit
                                         </a>
@@ -90,7 +91,7 @@
 
 <%- include ../partials_pengelola/footer.ejs %>
 <%- include add_kelolawisata.ejs %>
-<%- include edit_kelolawisata.ejs %>
+
 
 <!-- page script -->
 <script>
@@ -114,13 +115,6 @@
         var NamaWisata = $(this).data('NamaWisata');
         var FotoWisata = $(this).data('FotoWisata');
         var AlamatWisata = $(this).data('AlamatWisata');
-
-        $('#edit-kelolawisata').modal('show');
-        $('.id_wisata').val(id_wisata);
-        $('.id_pengelola').val(id_pengelola);
-        $('.NamaWisata').val(NamaWisata);
-        $('.FotoWisata').val(FotoWisata);
-        $('.AlamatWisata').val(AlamatWisata);
     });
 
     function delete_wisata(id_wisata) {

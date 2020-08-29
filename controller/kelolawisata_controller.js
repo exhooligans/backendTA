@@ -25,7 +25,35 @@ exports.viewKelola_wisata = async (req, res) => {
     throw err
   }
 }
+exports.viewKelola_wisata1 = async (req, res) => {
+  try {
+    const { id_wisata } = req.params
+    const alertMessage = req.flash('alertMessage');
+    const alertStatus = req.flash('alertStatus');
+    const alert = { message: alertMessage, status: alertStatus }
+    const userLogin = req.session.pengelola_wisata
+    if (userLogin) {
+      const wisata = await Wisata.findOne({
+        where: {
+          id_wisata: { [Op.eq]: id_wisata }
+        }
+      })
+      res.render("pengelola_wisata/kelolawisata/edit_kelolawisata", {
 
+        title: "Data Wisata",
+        pengelola_wisata: userLogin,
+        wisata: wisata,
+        alert: alert
+
+      })
+    } else {
+      req.session.destroy()
+      res.redirect('/signinpengelola')
+    }
+  } catch (err) {
+    throw err
+  }
+}
 exports.Kelola_wisataCreate = async (req, res) => {
   const {
     NamaWisata,

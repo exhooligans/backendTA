@@ -4,12 +4,13 @@ let {
     viewWisatawan,
     WisatawanCreate,
     WisatawanUpdate,
-    WisatawanDelete
+    WisatawanDelete, viewWisatawan1
 } = require("../controller/kelola_wisatawan_controller")
 
 const auth = require('../auth/admin_auth')
 
 router.get("/admin/wisatawan", viewWisatawan)
+router.get("/admin/wisatawan/edit_modal/:id_wisatawan", viewWisatawan1)
 router.post("/admin/wisatawan/create", WisatawanCreate)
 router.post("/admin/wisatawan/edit", WisatawanUpdate)
 router.get("/admin/wisatawan/delete/:id_wisatawan", WisatawanDelete)

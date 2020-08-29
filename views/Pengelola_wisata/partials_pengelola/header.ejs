@@ -68,26 +68,26 @@
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="/images/adminprofile/usernull.png" height="18" width="18" class="img-circle"
+                                <img src="/images/pengelola/pengelola.png" height="18" width="18" class="img-circle"
                                     alt="User Image">
-                                <% } %>
-                                <span class="hidden-xs"><% if (admin.nama_admin != null) { %>
-                                    <%= admin.nama_admin %>
+
+                                <span class="hidden-xs"><% if (pengelola_wisata.NamaPengelola != null) { %>
+                                    <%= pengelola_wisata.NamaPengelola+ " (Pengelola Wisata)" %>
                                     <% }else{ %>
-                                    <%= "Admin" %>
+                                    <%= "Pengelola Wisata" %>
                                     <% } %></span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header">
-                                    <img src="/images/adminprofile/usernull.png" height="18" width="18"
-                                        class="img-circle" alt="User Image">
+                                    <img src="/images/pengelola/pengelola.png" height="18" width="18" class="img-circle"
+                                        alt="User Image">
 
 
-                                    <p> <% if (admin.nama_admin!= null) { %>
-                                        <%= admin.nama_admin %>
+                                    <p> <% if (pengelola_wisata.NamaPengelola) { %>
+                                        <%= pengelola_wisata.NamaPengelola + " (Pengelola Wisata)"%>
                                         <% }else{ %>
-                                        <%= "Admin" %>
+                                        <%= "Pengelola Wisata" %>
                                         <% } %>
                                     </p>
                                 </li>
@@ -97,7 +97,7 @@
                                         <a href="/admin/profile" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="/logoutadmin" class="btn btn-default btn-flat">Sign Out</a>
+                                        <a href="/logoutpengelola" class="btn btn-default btn-flat">Sign Out</a>
                                     </div>
                                 </li>
                             </ul>

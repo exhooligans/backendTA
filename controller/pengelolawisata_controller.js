@@ -27,7 +27,8 @@ exports.actionLogin = async (req, res) => {
     if (checkPassword) {
       req.session.pengelola_wisata = {
         id: pengelola_wisata.id,
-        email: pengelola_wisata.email
+        email: pengelola_wisata.email,
+        NamaPengelola: pengelola_wisata.NamaPengelola
 
       }
       console.log(Pengelola_wisata)
