@@ -1,6 +1,6 @@
 const { Wisata } = require("../models")
 const Op = require("sequelize").Op
-
+require('dotenv/config')
 exports.viewKelola_wisata = async (req, res) => {
   try {
     const alertMessage = req.flash('alertMessage');
@@ -57,15 +57,16 @@ exports.viewKelola_wisata1 = async (req, res) => {
 exports.Kelola_wisataCreate = async (req, res) => {
   const {
     NamaWisata,
-    FotoWisata,
+    Photo360,
     AlamatWisata
   } = req.body
-
+  let FotoWisata = "https://1.bp.blogspot.com/" + Photo360
   try {
 
     Wisata.create({
       NamaWisata,
       FotoWisata,
+      Photo360,
       AlamatWisata
     }).then(() => {
       req.flash('alertMessage', `Berhasil tambah data  : ${NamaWisata}`)
@@ -84,8 +85,9 @@ exports.Kelola_wisataCreate = async (req, res) => {
 
 exports.Kelola_wisataUpdate = async (req, res) => {
   const { id_wisata, NamaWisata,
-    FotoWisata, AlamatWisata
+    Photo360, AlamatWisata
   } = req.body
+  let FotoWisata = "https://1.bp.blogspot.com/" + Photo360
   try {
     const wisata = await Wisata.findOne({
       where: {
@@ -94,10 +96,11 @@ exports.Kelola_wisataUpdate = async (req, res) => {
     })
     return wisata.update({
       NamaWisata: NamaWisata,
-      FotoWisata: FotoWisata,
+      FotoWisata,
+      Photo360: Photo360,
       AlamatWisata: AlamatWisata
     }).then(() => {
-      req.flash('alertMessage', `Berhasil Ubah data : ${NamaWisata}`)
+      req.flash('alertMessage', `Berhasil Ubah data :  ${process.env.nama}`)
       req.flash('alertStatus', 'warning')
       res.redirect("/pengelola/kelola_wisata")
     }).catch((err) => {
